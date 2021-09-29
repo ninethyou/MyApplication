@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation = "vertical">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="60dp"
+        android:background="@color/gray_100"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="350dp"
+            android:layout_height="40dp">
+
+            <TextView
+                android:id="@+id/textView_BasketfoodNo"
+                android:layout_height="wrap_content"
+                android:text="FoodNo" />
+
+            <TextView
+                android:id="@+id/textView_BasketfoodName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BasketfoodName" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="350dp"
+            android:layout_height="40dp">
+
+            <TextView
+                android:id="@+id/textView_BasketfoodCnt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BasketfoodCnt" />
+
+            <TextView
+                android:id="@+id/textView_BasketfoodPrice"
+                android:layout_width="wrap_content"
+                android:text="textView_BasketfoodPrice" />
+
+            <TextView
+                android:id="@+id/textView_BasketTotalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+        </TableRow>
+
+    </TableLayout>
+</LinearLayout>
