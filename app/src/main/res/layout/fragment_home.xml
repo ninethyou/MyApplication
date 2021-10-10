@@ -6,13 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".HomeFragment">
 
+    <ImageButton
+        android:id="@+id/imageButtonWishlist"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:scaleType="fitStart"
+        android:src="@drawable/heart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ListView
         android:id="@+id/restaurantListView"
         android:layout_width="match_parent"
         android:layout_height="366dp"
         android:layout_margin="10dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
 
         android:divider="@color/dark_blue"
         android:dividerHeight="10dp"
@@ -23,7 +34,7 @@
         android:id="@+id/imageView"
         android:layout_width="410dp"
         android:layout_height="172dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="60dp"
         android:src="@drawable/pknu_logo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -32,8 +43,8 @@
         android:id="@+id/imageButtonBasket"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
         android:scaleType="fitStart"
         android:src="@drawable/basket"
         app:layout_constraintEnd_toEndOf="parent"

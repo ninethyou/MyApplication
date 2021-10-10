@@ -10,9 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".OrderDetailActivity"
+            android:exported="true"
+            android:parentActivityName=".MainActivity"
+            />
+        <activity
+            android:name=".WishList"
+            android:exported="true"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".foodDetail"
             android:exported="true"
-            android:parentActivityName=".RestActivity"/>
+            android:parentActivityName=".RestActivity" />
         <activity
             android:name=".BasketActivity"
             android:exported="true"

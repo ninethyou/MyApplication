@@ -42,10 +42,21 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        imgbtn = (ImageButton) rootview.findViewById(R.id.imageButtonWishlist);
+        imgbtn.setOnClickListener(new OnClickListener()
+        {
+            @Override
+            public  void onClick(View v)
+            {
+                Intent intent = new Intent(getActivity(),WishList.class);
+                startActivity((intent));
+
+            }
+        });
 
         resList = new ArrayList<>();
         resList.add(new restaurant("구학","10:00 - 12:00","혼잡"));
-        resList.add(new restaurant("구학","10:00 - 12:00","혼잡"));
+        resList.add(new restaurant("신학","10:00 - 12:00","혼잡"));
 
         resListView = (ListView) rootview.findViewById((R.id.restaurantListView));
         adapter = new ResListAdapter(getContext(),resList);
