@@ -17,7 +17,9 @@
         <entry key="..\:/capstone/app/src/main/res/layout/fragment_dashboard.xml" value="0.2046875" />
         <entry key="..\:/capstone/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/capstone/app/src/main/res/layout/fragment_notifications.xml" value="0.2046875" />
+        <entry key="..\:/capstone/app/src/main/res/layout/layout_admin.xml" value="0.21614583333333334" />
         <entry key="..\:/capstone/app/src/main/res/layout/layout_basket.xml" value="0.2046875" />
+        <entry key="..\:/capstone/app/src/main/res/layout/layout_order_accept.xml" value="0.21614583333333334" />
         <entry key="..\:/capstone/app/src/main/res/layout/order_detail.xml" value="0.2869791666666667" />
         <entry key="..\:/capstone/app/src/main/res/layout/order_item.xml" value="0.2869791666666667" />
         <entry key="..\:/capstone/app/src/main/res/layout/restaurant.xml" value="0.19739583333333333" />
