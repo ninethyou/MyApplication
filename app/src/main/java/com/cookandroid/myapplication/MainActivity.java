@@ -1,5 +1,6 @@
 package com.cookandroid.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ListView;
@@ -14,49 +15,14 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    HomeFragment fragment1;
-    DashboardFragment fragment2;
-    NotificationsFragment fragment3;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.layout_signin);
 
-        fragment1 = new HomeFragment();
-        fragment2 = new DashboardFragment();
-        fragment3 = new NotificationsFragment();
+        Intent intent = new Intent(getApplicationContext(), _LoginActivity.class);
+        startActivity(intent);
 
-
-        getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment1).commit();
-        BottomNavigationView bottomNavigation = findViewById(R.id.nav_view);
-        bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.navigation_home:
-
-                        getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.container, fragment1).commit();
-
-                        return true;
-                    case R.id.navigation_dashboard:
-
-                        getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.container, fragment2).commit();
-
-                        return true;
-                    case R.id.navigation_notifications:
-
-                        getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.container, fragment3).commit();
-
-                        return true;
-                }
-
-                return false;
-            }
-        });
     }
 }
