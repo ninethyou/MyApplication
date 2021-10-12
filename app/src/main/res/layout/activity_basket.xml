@@ -6,16 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/button_reserv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:backgroundTint="@color/sky_blue"
-        android:text="예약 주문"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
-
     <TextView
         android:id="@+id/textview_주문방법"
         android:layout_width="197dp"
@@ -28,22 +18,11 @@
         app:layout_constraintTop_toTopOf="@+id/guideline5" />
 
     <Button
-        android:id="@+id/button_directOrder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:backgroundTint="@color/gray_100"
-        android:textColor="@color/dark_blue"
-        android:text="바로 주문"
-        app:layout_constraintStart_toEndOf="@+id/button_reserv"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
-
-    <Button
         android:id="@+id/button_order"
         android:layout_width="196dp"
         android:layout_height="58dp"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="148dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="204dp"
         android:backgroundTint="@color/sky_blue"
         android:text="주문하기"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,8 +43,8 @@
         android:id="@+id/textView_totalPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginBottom="20dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintStart_toEndOf="@+id/textView_totalText" />
@@ -90,5 +69,37 @@
         android:layout_height="332dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TimePicker
+        android:id="@+id/timePicker1"
+        android:layout_width="match_parent"
+        android:layout_height="157dp"
+        android:timePickerMode="spinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"></TimePicker>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        tools:layout_editor_absoluteX="41dp">
+
+        <RadioButton
+            android:id="@+id/radioButton_direct"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="1"
+            android:text="바로 주문" />
+
+        <RadioButton
+            android:id="@+id/radioButton_resv"
+            android:layout_width="111dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="예약주문" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

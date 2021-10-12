@@ -9,12 +9,14 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
 public class NotificationsFragment extends Fragment {
 
-    private ListView OrderListView;
+    private RecyclerView OrderListView;
     private OrderAdapter adapter;
     private ArrayList<Order> orderList;
 
@@ -22,21 +24,23 @@ public class NotificationsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup rootview =(ViewGroup) inflater.inflate(R.layout.fragment_notifications, container, false);
 
-        orderList = new ArrayList<Order>();
-        orderList.add(new Order("12345","20-01-01","15:00","25000"));
+        RecyclerView OrderListView = rootview.findViewById(R.id.orderList);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(rootview.getContext(),LinearLayoutManager.VERTICAL,false);
+        OrderListView.setLayoutManager(layoutManager);
+        OrderAdapter adapter = new OrderAdapter();
 
-        OrderListView = (ListView) rootview.findViewById(R.id.orderList);
-        adapter = new OrderAdapter(getContext(),orderList);
-         OrderListView.setAdapter(adapter);
-         OrderListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
-         {
+         adapter.addItem(new Order("12345","20-01-01","15:00","25000"));
 
-             @Override
-             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                 Intent intent = new Intent(getActivity(),OrderDetailActivity.class);
-                 startActivity((intent));
-             }
-         });
+        OrderListView.setAdapter(adapter);
+
+        adapter.setOnItemClickListener(new OnOrderItemClickListener() {
+            @Override
+            public void onItemClick(OrderAdapter.ViewHolder holder, View view, int position) {
+                Intent intent = new Intent(rootview.getContext(),OrderDetailActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
 
         return rootview;

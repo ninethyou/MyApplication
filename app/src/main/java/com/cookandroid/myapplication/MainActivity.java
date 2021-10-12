@@ -3,15 +3,11 @@ package com.cookandroid.myapplication;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment1).commit();
-        BottomNavigationView bottomNavigation = findViewById(R.id.nav_view);
+        BottomNavigationView bottomNavigation = findViewById(R.id.nav_view_admin);
         bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {

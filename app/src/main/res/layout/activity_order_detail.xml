@@ -19,17 +19,6 @@
         app:layout_constraintTop_toBottomOf="@+id/progressBar" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="145dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:text="주문 번호"
-        android:textSize="30dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/textView_orderNo"
         android:layout_width="223dp"
         android:layout_height="105dp"
@@ -64,20 +53,19 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="338dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="8dp"
 
         android:text="음식명"
-        android:textSize="20dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        tools:layout_editor_absoluteY="78dp" />
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="77dp"
+        android:layout_height="43dp"
         android:text="주문일자"
         android:textSize="20dp"
 
@@ -107,5 +95,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="193dp" />
+        app:layout_constraintGuide_begin="128dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

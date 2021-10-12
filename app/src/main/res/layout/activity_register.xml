@@ -75,6 +75,7 @@
                 android:id="@+id/btn_create"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/sky_blue"
                 android:layout_column="3"
                 android:text="생성"/>
         </TableRow>
