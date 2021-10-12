@@ -2,10 +2,13 @@ package com.cookandroid.myapplication;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Notification;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
 import android.widget.Toolbar;
 
 public class BasketActivity extends AppCompatActivity {
@@ -17,6 +20,15 @@ public class BasketActivity extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
+
+        RecyclerView recyclerView = findViewById(R.id.basketList);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
+        basketAdapter adapter = new basketAdapter();
+
+        adapter.addItem(new basket("김밥","12345",25000,1));
+
+        recyclerView.setAdapter(adapter);
 
     }
     public boolean onOptionItemSelected(MenuItem menuItem)

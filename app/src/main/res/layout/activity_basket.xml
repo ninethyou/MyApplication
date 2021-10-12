@@ -84,16 +84,11 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="384dp" />
 
-    <ScrollView
-        android:id="@+id/ScrollView"
-        android:layout_width="408dp"
-        android:layout_height="322dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/basketList"
+        android:layout_width="match_parent"
+        android:layout_height="332dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </ScrollView>
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

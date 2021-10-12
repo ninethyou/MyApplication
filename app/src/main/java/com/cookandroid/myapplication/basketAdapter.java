@@ -7,57 +7,85 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.cookandroid.myapplication.R;
 import com.cookandroid.myapplication.basket;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class basketAdapter extends BaseAdapter {
+public class basketAdapter extends RecyclerView.Adapter<basketAdapter.ViewHolder> {
 
-    private Context context;
-    private LayoutInflater layoutInflater;
-
-    public basketAdapter(Context context, LayoutInflater layoutInflater) {
-        this.context = context;
-        this.layoutInflater = layoutInflater;
-    }
-    private List<basket> basketList;
-
+    ArrayList<basket> items = new ArrayList<basket>();
+    @NonNull
     @Override
-    public int getCount() {
-        return basketList.size();
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+        View itemView = inflater.inflate(R.layout.basket,parent,false);
+
+        return new ViewHolder(itemView);
     }
 
     @Override
-    public Object getItem(int position) {
-        return basketList.get(position);
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        basket item = items.get(position);
+        holder.setItem(item);
     }
 
     @Override
-    public long getItemId(int position) {
-        return position;
+    public int getItemCount() {
+        return items.size();
+    }
+    public void addItem(basket item)
+    {
+        items.add(item);
+    }
+    public void setItems(ArrayList<basket> items)
+    {
+        this.items = items;
+    }
+    public basket getItem(int position)
+    {
+        return items.get(position);
+    }
+    public void setItems(int position, basket item)
+    {
+        items.set(position,item);
     }
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        View v = View.inflate(context,R.layout.basket,null);
+    static class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView foodNo = (TextView) v.findViewById(R.id.textView_BasketfoodNo);
-        TextView foodName = (TextView) v.findViewById(R.id.textView_BasketfoodName);
-        TextView foodPrice = (TextView) v.findViewById(R.id.textView_BasketfoodPrice);
+        TextView textView_foodNo;
+        TextView textView_foodName;
+        TextView textView_foodCnt;
+        TextView textView_foodPrice;
+        TextView textView_foodTotalPrice;
+        public ViewHolder(View itemView)
+        {
+            super(itemView);
+            TextView textView_foodNo = (TextView) itemView.findViewById(R.id.textView_BasketfoodNo);
+            TextView textView_foodName = (TextView) itemView.findViewById(R.id.textView_BasketfoodName);
+            TextView textView_foodPrice = (TextView) itemView.findViewById(R.id.textView_BasketfoodPrice);
 
-        TextView foodCnt = (TextView) v.findViewById(R.id.textView_BasketfoodCnt);
-        TextView BasketTotalPrice = (TextView) v.findViewById(R.id.textView_BasketTotalPrice);
+            TextView textView_foodCnt = (TextView) itemView.findViewById(R.id.textView_BasketfoodCnt);
+            TextView textView_foodTotalPrice = (TextView) itemView.findViewById(R.id.textView_BasketTotalPrice);
 
-        foodNo.setText(basketList.get(position).getFoodNo());
-        foodName.setText(basketList.get(position).getFoodName());
-        foodPrice.setText(basketList.get(position).getFoodPrice());
+        }
+    public void setItem(basket item)
+    {
+        textView_foodNo.setText(item.getFoodNo());
+        textView_foodName.setText(item.getFoodName());
+        textView_foodPrice.setText(item.getFoodPrice());
 
-        foodCnt.setText(basketList.get(position).getFoodCnt());
-        Integer total = basketList.get(position).getFoodCnt()  * basketList.get(position).getFoodPrice();
-        BasketTotalPrice.setText(total.toString());
-
-        return v;
+        textView_foodCnt.setText(item.getFoodCnt());
+        Integer total = item.getFoodCnt()  * item.getFoodPrice();
+        textView_foodTotalPrice.setText(total.toString());
 
     }
+
+
+    }
+
 }
