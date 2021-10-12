@@ -3,8 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_basket.xml" value="0.21875" />
+        <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_food_detail.xml" value="0.21875" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_login.xml" value="0.1899696048632219" />
+        <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_order_detail.xml" value="0.21875" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_register.xml" value="0.1899696048632219" />
+        <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_rest.xml" value="0.21875" />
+        <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/fragment_dashboard.xml" value="0.21875" />
+        <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/fragment_home.xml" value="0.21875" />
+        <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/fragment_notifications.xml" value="0.21875" />
+        <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/layout_admin.xml" value="0.21875" />
+        <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/layout_basket.xml" value="0.21875" />
+        <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/layout_order_accept.xml" value="0.21875" />
+        <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/order_item.xml" value="0.21875" />
+        <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/restaurant.xml" value="0.21875" />
         <entry key="..\:/capstone/app/src/main/res/drawable-v24/ic_dashboard_black_24dp.xml" value="0.22083333333333333" />
         <entry key="..\:/capstone/app/src/main/res/drawable-v24/ic_home_black_24dp.xml" value="0.22083333333333333" />
         <entry key="..\:/capstone/app/src/main/res/drawable-v24/ic_notifications_black_24dp.xml" value="0.22083333333333333" />

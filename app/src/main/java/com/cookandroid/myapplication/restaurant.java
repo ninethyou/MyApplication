@@ -6,6 +6,9 @@ public class restaurant {
     String OpTime;
     String congestion;
 
+    public restaurant(String name){
+        this.name = name;
+    }
 
     public restaurant(String name, String OpTime, String congestion) {
         this.name = name;
