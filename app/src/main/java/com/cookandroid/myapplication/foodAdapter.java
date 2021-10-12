@@ -1,7 +1,6 @@
 package com.cookandroid.myapplication;
 
 import android.content.Context;
-import android.graphics.Movie;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,7 +57,7 @@ public class foodAdapter extends BaseAdapter {
         foodImg.setImageResource(fooditem.getFoodImg());
         foodName.setText(fooditem.getFoodName());
         foodPrice.setText(fooditem.getFoodPrice());
-        foodDescription.setText(fooditem.getFoodDescription());
+        foodDescription.setText(fooditem.getFoodInfo());
 
         return convertView;
     }

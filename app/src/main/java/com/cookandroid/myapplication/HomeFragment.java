@@ -55,7 +55,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Intent intent = new Intent(getActivity(),RestActivity.class);
+                Intent intent = new Intent(getActivity(),RestListActivity.class);
                 startActivity((intent));
             }
         });

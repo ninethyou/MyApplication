@@ -22,15 +22,17 @@
         <activity
             android:name=".BasketActivity"
             android:exported="true"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".HomeActivity" />
         <activity
-            android:name=".MenuActivity"
+            android:name=".HomeActivity"
             android:exported="true"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".HomeActivity" />
         <activity
             android:name="._LoginActivity" />
         <activity
             android:name="._RegisterActivity"/>
+        <activity
+            android:name=".RestListActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
