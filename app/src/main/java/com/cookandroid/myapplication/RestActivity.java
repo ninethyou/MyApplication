@@ -1,26 +1,17 @@
 package com.cookandroid.myapplication;
 
-import static com.cookandroid.myapplication.R.drawable.gimbap;
-
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
-import android.database.DataSetObserver;
-import android.graphics.drawable.Drawable;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class RestActivity extends AppCompatActivity {
@@ -38,7 +29,7 @@ public class RestActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        data = Data.menulist;
+        data = DB.getDataList();
 
         foodList = new ArrayList<food>();
         for(int i= 0;i<data.size()/4;i++){
@@ -52,9 +43,12 @@ public class RestActivity extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                food f = (food) parent.getAdapter().getItem(position);
+                Log.d("food", f.getFoodName()+f.getFoodPrice()+f.getFoodInfo());
                 Intent intent = new Intent(getApplicationContext(),foodDetail.class);
-                startActivity((intent));
+
+                intent.putExtra("food", (Serializable) f);
+                startActivity(intent);
             }
         });
 
@@ -70,31 +64,6 @@ public class RestActivity extends AppCompatActivity {
             }
             return super.onOptionsItemSelected(menuItem);
         }
-    class InsertData extends AsyncTask<String, Void, String> {
-        ProgressDialog progressDialog;
 
-        protected void onPreExecute(){
-            super.onPreExecute();}
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-
-            if(s != null){
-            }else{
-                Toast.makeText(getApplicationContext(), "찾을 수 없습니다", Toast.LENGTH_LONG).show();
-            }
-            Log.d("phptest", "POST resaponse - "+s);
-        }
-        @Override
-        protected String doInBackground(String... params) {
-            String shop = (String)params[1];
-
-            String serverURL = (String)params[0]+"?"+"shop="+shop;
-
-            return GetData.get(serverURL);
-
-
-        }
-    }
-    }
+}
 

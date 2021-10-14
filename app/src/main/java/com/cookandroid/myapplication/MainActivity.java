@@ -1,6 +1,5 @@
 package com.cookandroid.myapplication;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -12,7 +11,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
 
     HomeFragment fragment1;
-    DashboardFragment fragment2;
+    MyInfoFragment fragment2;
     NotificationsFragment fragment3;
 
 
@@ -21,11 +20,8 @@ public class MainActivity extends AppCompatActivity {
       super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-        startActivity(intent);
-
         fragment1 = new HomeFragment();
-        fragment2 = new DashboardFragment();
+        fragment2 = new MyInfoFragment();
         fragment3 = new NotificationsFragment();
 
 

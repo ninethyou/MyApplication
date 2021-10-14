@@ -12,40 +12,36 @@
         android:layout_height="100dp"
         android:layout_marginTop="500dp"
         android:orientation="horizontal"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Button
+
+        <ImageView
             android:id="@+id/wish"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="5dp"
-            android:layout_weight="1"
-            android:text="Wish"
-            android:textSize="20dp"
-
-            app:backgroundTint="#2196F3" />
-
-        <Button
-            android:id="@+id/bucket"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="5dp"
-            android:layout_weight="1"
-            android:text="장바구니"
-            android:textSize="20dp"
-            app:backgroundTint="#2196F3" />
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="30dp"
+            android:src="@drawable/wish"/>
 
         <Button
             android:id="@+id/order"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:gravity="center"
             android:text="주문하기"
-            android:textSize="20dp"
+            android:textSize="35dp"
             app:backgroundTint="#2196F3" />
+
+        <ImageView
+            android:id="@+id/basket"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/cart"/>
+
 
     </LinearLayout>
 
@@ -65,22 +61,23 @@
             android:layout_height="wrap_content"
             tools:srcCompat="@tools:sample/avatars" />
 
-        <EditText
-            android:id="@+id/editTextTextPersonName"
+        <TextView
+            android:id="@+id/foodName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+            android:gravity="center"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:text="설명"
+            android:textSize="16dp"/>
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-            android:hint="요청사항"
-            android:textSize="20dp" />
+            android:gravity="center"
+            android:hint="음식 이름"
+            android:textSize="30dp" />
 
         <LinearLayout
             android:layout_width="281dp"
@@ -105,7 +102,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="수량"
+                android:text="1"
                 android:textSize="20dp" />
 
             <Button

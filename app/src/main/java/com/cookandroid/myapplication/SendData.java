@@ -1,5 +1,8 @@
 package com.cookandroid.myapplication;
 
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.os.AsyncTask;
 import android.util.Log;
 
 import java.io.BufferedReader;
@@ -8,9 +11,30 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+public class SendData extends AsyncTask<String, Void, String> {
+    ProgressDialog progressDialog;
+    Activity activity;
 
-public class SendData {
-    public static String send(String serverURL, String postParameters){
+    SendData(Activity a){
+        this.activity = a;
+    }
+
+    protected void onPreExecute(){
+        super.onPreExecute();
+
+        progressDialog = ProgressDialog.show(activity,"Pleas Wait", null, true, true);
+    }
+    @Override
+    protected void onPostExecute(String s) {
+        super.onPostExecute(s);
+
+        progressDialog.dismiss();
+        Log.d("php", "POST resaponse - "+s);
+    }
+    protected String doInBackground(String... params){
+        String serverURL = (String) params[0];
+        String postParameters = (String) params[1];
+
         try{
             URL url = new URL(serverURL);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
@@ -56,3 +80,4 @@ public class SendData {
         }
     }
 }
+

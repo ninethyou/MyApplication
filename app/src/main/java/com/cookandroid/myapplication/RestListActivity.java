@@ -52,7 +52,7 @@ public class RestListActivity extends AppCompatActivity {
 
 
                 RestListActivity.InsertData task = new RestListActivity.InsertData();
-                task.execute("http://"+Data.getIP()+"/menulist.php",n.getName());
+                task.execute("http://"+ DB.getIP()+"/menulist.php",n.getName());
 
             }
         });

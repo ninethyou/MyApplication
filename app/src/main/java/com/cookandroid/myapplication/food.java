@@ -1,18 +1,22 @@
 package com.cookandroid.myapplication;
 
 import android.graphics.drawable.Drawable;
+import android.os.Parcelable;
 
-public class food {
+import java.io.Serializable;
+
+public class food implements Serializable {
     private int foodImg;
     private String foodName;
     private String foodPrice;
-    private String foodDescription;
+    private String foodInfo;
 
-    public food(int foodImg, String foodName, String foodPrice, String foodDescription) {
+
+    public food(int foodImg, String foodName, String foodPrice, String foodInfo) {
         this.foodImg = foodImg;
         this.foodName = foodName;
         this.foodPrice = foodPrice;
-        this.foodDescription = foodDescription;
+        this.foodInfo = foodInfo;
     }
 
     public int getFoodImg() {
@@ -39,11 +43,11 @@ public class food {
         this.foodPrice = foodPrice;
     }
 
-    public String getFoodDescription() {
-        return foodDescription;
+    public String getFoodInfo() {
+        return foodInfo;
     }
 
-    public void setFoodDescription(String foodDescription) {
-        this.foodDescription = foodDescription;
+    public void setFoodInfo(String foodInfo) {
+        this.foodInfo = foodInfo;
     }
 }

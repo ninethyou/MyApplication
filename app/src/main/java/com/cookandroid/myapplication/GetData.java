@@ -31,26 +31,26 @@ public class GetData {
             InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "UTF-8");
             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
-            StringBuilder sb = new StringBuilder();
             String line = null;
+            String s = null;
+            DB.clearDataList();
 
             int i = 0;
-            Data.menulist.clear();
-
             while((line = bufferedReader.readLine()) != null){
-                sb.append(line);
-                if(i>=2){
-                    Data.menulist.add(line);
-                    Log.d("menu", Data.menulist.get(i-2).toString());
-                }
+                if(i==0) s = line;
+                DB.addData(line);
+                Log.d("getData", DB.getData(i).toString());
                 i++;
             }
             bufferedReader.close();
-            return sb.toString();
+            return s;
 
         }catch(Exception e){
             Log.d("TAG", "InsertData: Error ",e);
             return new String("Error: "+e.getMessage());
         }
     }
+
+
+
 }

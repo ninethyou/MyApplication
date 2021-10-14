@@ -3,84 +3,145 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TableLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:stretchColumns="0,1,2,3">
-        <TableRow>
-            <TextView
-                android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:gravity="right"
-                android:text="ID : "/>
+                android:layout_gravity="center"
+                android:layout_weight="1" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="3"
+                android:text="아   이   디"/>
             <EditText
                 android:id="@+id/reg_id"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_span="3"/>
-        </TableRow>
-        <TableRow>
+                android:layout_weight="5"/>
+            <Button
+                android:id="@+id/reg_idck"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/sky_blue"
+                android:layout_weight="3"
+                android:text="중복 확인"
+                android:textSize="11dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:gravity="right"
-                android:text="password : "/>
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="비 밀 번 호"/>
             <EditText
                 android:id="@+id/reg_pw"
-                android:layout_width="wrap_content"
+                android:layout_weight="8"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_span="3"/>
-        </TableRow>
-        <TableRow>
+                android:hint="8~12자"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:gravity="right"
-                android:text="name : "/>
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="비밀번호 확인"/>
+            <EditText
+                android:id="@+id/reg_pwck"
+                android:layout_weight="8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="8~12자"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="이          름"/>
             <EditText
                 android:id="@+id/reg_name"
-                android:layout_width="wrap_content"
+                android:layout_weight="8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_span="3"/>
-        </TableRow>
-        <TableRow>
+                android:layout_weight="1"/>
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:gravity="right"
-                android:text="birth : "/>
-            <EditText
-                android:id="@+id/reg_birth"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="생년월일 6자리"
-                android:layout_span="3"/>
-        </TableRow>
-        <TableRow>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="right"
-                android:text="student num : "/>
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="학          번"/>
             <EditText
                 android:id="@+id/reg_num"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_span="3"/>
-        </TableRow>
-        <TableRow
+                android:layout_weight="8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
             <Button
-                android:id="@+id/btn_create"
+                android:id="@+id/reg_create"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/sky_blue"
-                android:layout_column="3"
                 android:text="생성"/>
-        </TableRow>
+        </LinearLayout>
 
+    </LinearLayout>
 
-
-    </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

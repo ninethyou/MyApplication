@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">capstone</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">식단표</string>
+    <string name="title_myinfo">내 정보</string>
     <string name="title_notifications">주문내역</string>
     <string name="title_activity_admin">AdminActivity</string>
     <string name="large_text">
