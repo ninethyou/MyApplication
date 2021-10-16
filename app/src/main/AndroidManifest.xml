@@ -16,10 +16,7 @@
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true">
 
-        <activity
-            android:name=".AdminActivity"
-            android:exported="true"
-            android:label="@string/title_activity_admin" />
+
         <activity
             android:name=".OrderDetailActivity"
             android:exported="true"
