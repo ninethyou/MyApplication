@@ -17,13 +17,14 @@ import com.cookandroid.myapplication.databinding.ActivityAdminBinding;
 public class AdminActivity extends AppCompatActivity {
 
     Fragment_admin_list fragment_admin_list;
+    Fragment_admin_receipt fragment_admin_receipt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
     fragment_admin_list = new Fragment_admin_list();
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.container_admin, fragment_admin_list).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.container_admin, fragment_admin_receipt).commit();
         BottomNavigationView BottomNavigationView = findViewById(R.id.nav_view_admin);
         BottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -32,7 +33,7 @@ public class AdminActivity extends AppCompatActivity {
                     case R.id.navigation_home:
 
                         getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.container, fragment_admin_list).commit();
+                                .replace(R.id.container, fragment_admin_receipt).commit();
 
                         return true;
                     case R.id.navigation_dashboard:

@@ -29,7 +29,7 @@ public class NotificationsFragment extends Fragment {
         OrderListView.setLayoutManager(layoutManager);
         OrderAdapter adapter = new OrderAdapter();
 
-         adapter.addItem(new Order("12345","20-01-01","15:00","25000"));
+       adapter.addItem(new Order("12345","20-01-01","15:00","25000"));
 
         OrderListView.setAdapter(adapter);
 
