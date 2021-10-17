@@ -11,15 +11,21 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.TimePicker;
 import android.widget.Toolbar;
+
+import java.util.ArrayList;
 
 public class BasketActivity extends AppCompatActivity {
 
     TimePicker timePicker;
     RadioButton btnResv;
     RadioButton btnDirect;
+    private ArrayList<basket> basketArrayList;
+    private basketAdapter basketAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,14 +35,13 @@ public class BasketActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-         RecyclerView recyclerView = findViewById(R.id.basketList);
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
-        basketAdapter adapter = new basketAdapter();
+      basketArrayList =new ArrayList<basket>();
 
-        adapter.addItem(new basket("김밥","12345",25000,1));
-
-        recyclerView.setAdapter(adapter);
+        basketArrayList.add(new basket("김밥","12345",25000,1));
+        ListView listView = (ListView)findViewById(R.id.basketList);
+        basketAdapter = new basketAdapter(this,basketArrayList);
+        listView.setAdapter(basketAdapter);
 
         timePicker = (TimePicker)findViewById(R.id.timePicker1);
         btnDirect = (RadioButton) findViewById(R.id.radioButton_direct);
@@ -52,7 +57,7 @@ public class BasketActivity extends AppCompatActivity {
         btnDirect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                timePicker.setVisibility(View.VISIBLE);
+                timePicker.setVisibility(View.INVISIBLE);
             }
         });
 

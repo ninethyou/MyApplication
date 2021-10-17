@@ -16,76 +16,69 @@ import com.cookandroid.myapplication.basket;
 import java.util.ArrayList;
 import java.util.List;
 
-public class basketAdapter extends RecyclerView.Adapter<basketAdapter.ViewHolder> {
+public class basketAdapter extends BaseAdapter {
 
-    ArrayList<basket> items = new ArrayList<basket>();
-    @NonNull
-    @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View itemView = inflater.inflate(R.layout.basket,parent,false);
+ private    ArrayList<basket> items;
+ private  Context context;
+ private  List<basket> basketList;
 
-        return new ViewHolder(itemView);
+    public basketAdapter( Context context,ArrayList<basket> items) {
+        this.items = items;
+        this.context = context;
     }
 
-    @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        basket item = items.get(position);
-        holder.setItem(item);
-    }
 
-    @Override
-    public int getItemCount() {
-        return items.size();
-    }
     public void addItem(basket item)
     {
         items.add(item);
     }
-    public void setItems(ArrayList<basket> items)
-    {
-        this.items = items;
+
+    @Override
+    public int getCount() {
+        return items.size();
     }
+
     public basket getItem(int position)
     {
         return items.get(position);
     }
-    public void setItems(int position, basket item)
-    {
-        items.set(position,item);
+
+    @Override
+    public long getItemId(int position) {
+        return position;
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder{
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        final int pos = position;
+        final Context context = parent.getContext();
 
-        TextView textView_foodNo;
-        TextView textView_foodName;
-        TextView textView_foodCnt;
-        TextView textView_foodPrice;
-        TextView textView_foodTotalPrice;
-        public ViewHolder(View itemView)
-        {
-            super(itemView);
-            TextView textView_foodNo = (TextView) itemView.findViewById(R.id.textView_BasketfoodNo);
-            TextView textView_foodName = (TextView) itemView.findViewById(R.id.textView_BasketfoodName);
-            TextView textView_foodPrice = (TextView) itemView.findViewById(R.id.textView_BasketfoodPrice);
-
-            TextView textView_foodCnt = (TextView) itemView.findViewById(R.id.textView_BasketfoodCnt);
-            TextView textView_foodTotalPrice = (TextView) itemView.findViewById(R.id.textView_BasketTotalPrice);
-
+        if (convertView == null) {
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView = inflater.inflate(R.layout.basket, parent, false);
         }
-    public void setItem(basket item)
-    {
-        textView_foodNo.setText(item.getFoodNo());
-        textView_foodName.setText(item.getFoodName());
-        textView_foodPrice.setText(item.getFoodPrice());
 
-        textView_foodCnt.setText(item.getFoodCnt());
-        Integer total = item.getFoodCnt()  * item.getFoodPrice();
-        textView_foodTotalPrice.setText(total.toString());
+        TextView textView_foodNo = (TextView) convertView.findViewById(R.id.textView_BasketfoodNo);
+        TextView textView_foodName = (TextView) convertView.findViewById(R.id.textView_BasketfoodName);
+        TextView textView_foodPrice = (TextView) convertView.findViewById(R.id.textView_BasketfoodPrice);
 
+        TextView textView_foodCnt = (TextView) convertView.findViewById(R.id.textView_BasketfoodCnt);
+        TextView textView_foodTotalPrice = (TextView) convertView.findViewById(R.id.textView_BasketTotalPrice);
+
+        basket basket = items.get(position);
+
+        textView_foodNo.setText(basket.getFoodNo());
+        textView_foodNo.setText(basket.getFoodName());
+        textView_foodNo.setText(basket.getFoodPrice());
+        textView_foodNo.setText(basket.getFoodCnt());
+        Integer price = basket.getFoodPrice();
+        Integer cnt = basket.getFoodCnt();
+        Integer sum = price * cnt;
+        textView_foodNo.setText(sum.toString());
+        return convertView;
     }
 
 
     }
 
-}
+

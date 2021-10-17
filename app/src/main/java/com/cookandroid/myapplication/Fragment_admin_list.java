@@ -9,12 +9,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Fragment_admin_list#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+
+
 public class Fragment_admin_list extends Fragment {
 
 
@@ -30,12 +29,11 @@ public class Fragment_admin_list extends Fragment {
                              Bundle savedInstanceState) {
         ViewGroup rootview =(ViewGroup) inflater.inflate(R.layout.fragment_notifications, container, false);
 
-        RecyclerView OrderListView = rootview.findViewById(R.id.Orderlist_admin);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(rootview.getContext(),LinearLayoutManager.VERTICAL,false);
-        OrderListView.setLayoutManager(layoutManager);
-        OrderAdapter adapter = new OrderAdapter();
+        ListView OrderListView = rootview.findViewById(R.id.Orderlist_admin);
+        ArrayList<Order> orderArrayList = new ArrayList<Order>();
 
-        adapter.addItem(new Order("12345","20-01-01","15:00","25000"));
+          orderArrayList.add(new Order("12345","20-01-01","15:00","25000"));
+        OrderAdapter adapter = new OrderAdapter(rootview.getContext(), orderArrayList);
 
         return inflater.inflate(R.layout.fragment_admin_list, container, false);
     }
