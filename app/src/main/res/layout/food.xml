@@ -15,30 +15,33 @@
             android:id="@+id/textViewFoodName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="25dp"
             android:text="TextView" />
 
         <TextView
             android:id="@+id/textViewFoodPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_marginLeft="25dp"
+            android:textSize="18dp"
             android:text="TextView" />
 
         <TextView
-            android:id="@+id/textViewFoodDescrip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:id="@+id/textViewFoodInfo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
             android:text="TextView" />
 
     </LinearLayout>
 
     <ImageView
         android:id="@+id/imageViewFoodImg"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_weight="1"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_margin="10dp"
         android:scaleType="fitStart"
         tools:srcCompat="@tools:sample/avatars" />
 

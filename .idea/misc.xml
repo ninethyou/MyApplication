@@ -5,15 +5,22 @@
       <map>
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_admin.xml" value="0.21875" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_basket.xml" value="0.21875" />
+        <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_basketlist.xml" value="0.21875" />
+        <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_category.xml" value="0.21875" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_food_detail.xml" value="0.21875" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_login.xml" value="0.1899696048632219" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_order_detail.xml" value="0.21875" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_register.xml" value="0.33" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_rest.xml" value="0.21875" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/basket.xml" value="0.33" />
+        <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/category.xml" value="0.2203125" />
+        <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/floatingbutton.xml" value="0.21875" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/food.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/fragment_admin_list.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/fragment_admin_receipt.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/fragment_dashboard.xml" value="0.21875" />
-        <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/fragment_home.xml" value="0.21875" />
+        <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/fragment_myinfo.xml" value="0.27355072463768115" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/fragment_notifications.xml" value="0.21875" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/layout_admin.xml" value="0.21875" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/layout_basket.xml" value="0.21875" />
@@ -21,6 +28,7 @@
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/order_item.xml" value="0.21875" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/restaurant.xml" value="0.21875" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/menu/bottom_nav_menu.xml" value="0.21875" />
+        <entry key="..\:/Users/choih/AppData/Local/Android/Sdk/platforms/android-30/data/res/layout/action_bar_home.xml" value="0.21875" />
         <entry key="..\:/capstone/app/src/main/res/drawable-v24/ic_dashboard_black_24dp.xml" value="0.22083333333333333" />
         <entry key="..\:/capstone/app/src/main/res/drawable-v24/ic_home_black_24dp.xml" value="0.22083333333333333" />
         <entry key="..\:/capstone/app/src/main/res/drawable-v24/ic_notifications_black_24dp.xml" value="0.22083333333333333" />

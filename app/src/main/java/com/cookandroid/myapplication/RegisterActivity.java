@@ -1,23 +1,13 @@
 package com.cookandroid.myapplication;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.ArrayList;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -77,37 +67,25 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                InsertData task = new InsertData();
+                GetData task = new GetData(){
+                    protected void onPostExecute(String s) {
+                        super.onPostExecute(s);
+                        if(DB.getData(0).toString().equals("0")){
+                            Toast.makeText(getApplicationContext(), "사용 가능한 아이디입니다.", Toast.LENGTH_SHORT).show();
+                            idck = true;
+                        }else if(DB.getData(0).toString().equals("1")){
+                            Toast.makeText(getApplicationContext(), "이미 존재하는 아이디입니다.", Toast.LENGTH_SHORT).show();
+                            idck = false;
+                        }else{
+                            Toast.makeText(getApplicationContext(), "아이디를 적어주세요.", Toast.LENGTH_SHORT).show();
+                            idck = false;
+                        }
+                    }
+                };
                 task.execute("http://"+ DB.getIP()+"/idcheck.php?ID="+rid.getText());
             }
         });
     }
 
-    class InsertData extends AsyncTask<String, Void, String> {
-        ProgressDialog progressDialog;
 
-        protected void onPreExecute(){
-            super.onPreExecute();
-        }
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            if(DB.getData(0).toString().equals("0")){
-                Toast.makeText(getApplicationContext(), "사용 가능한 아이디입니다.", Toast.LENGTH_SHORT).show();
-                idck = true;
-            }else if(DB.getData(0).toString().equals("1")){
-                Toast.makeText(getApplicationContext(), "이미 존재하는 아이디입니다.", Toast.LENGTH_SHORT).show();
-                idck = false;
-            }else{
-                Toast.makeText(getApplicationContext(), "아이디를 적어주세요.", Toast.LENGTH_SHORT).show();
-                idck = false;
-            }
-
-        }
-        @Override
-        protected String doInBackground(String... params) {
-            String serverURL = (String)params[0];
-            return GetData.get(serverURL);
-        }
-    }
 }

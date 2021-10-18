@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -45,7 +44,7 @@ public class ResListAdapter extends BaseAdapter  {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
              convertView = inflater.inflate(R.layout.restaurant, parent, false);
         }
-        TextView resName = (TextView) convertView.findViewById((R.id.textViewResName));
+        TextView resName = (TextView) convertView.findViewById((R.id.resName));
         TextView resTime = (TextView) convertView.findViewById((R.id.textViewResOpTime));
         TextView resCongestion = (TextView) convertView .findViewById((R.id.textViewResCongestion));
 

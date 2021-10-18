@@ -29,9 +29,9 @@
             android:exported="true"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".foodDetail"
+            android:name=".FoodDetailActivity"
             android:exported="true"
-            android:parentActivityName=".RestActivity" />
+            android:parentActivityName=".FoodListActivity" />
         <activity
             android:name=".BasketActivity"
             android:exported="true"
@@ -47,9 +47,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".RestListActivity" />
+        <activity android:name=".CategoryActivity" />
         <activity
-            android:name=".RestActivity"
+            android:name=".FoodListActivity"
             android:exported="true"
             android:parentActivityName=".MainActivity" />
     </application>
