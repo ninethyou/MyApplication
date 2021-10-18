@@ -6,6 +6,7 @@ public class DB {
     private static String shop;
     private static String IP_Address = "124.51.190.90:1234";
     private static ArrayList dataList = new ArrayList();
+    private static ArrayList<Food> listBasket = new ArrayList<>();
     private static User user = new User();
 
     public static ArrayList getDataList() { return dataList; }
@@ -22,4 +23,7 @@ public class DB {
 
     public static String getIP() { return IP_Address; }
 
+    public static ArrayList<Food> getListBasket() { return listBasket; }
+    public static void setListBasket(ArrayList<Food> listBasket) { DB.listBasket = listBasket; }
+    public static void addListBasket(Food f){ listBasket.add(f); }
 }

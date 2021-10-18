@@ -9,25 +9,25 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class ResListAdapter_2 extends BaseAdapter  {
+public class CategoryAdapter extends BaseAdapter  {
 
     private Context context;
     private LayoutInflater layoutInflater;
-    private List<restaurant> resList;
+    private List<category> category;
 
-    public ResListAdapter_2(Context context, List<restaurant> resList) {
+    public CategoryAdapter(Context context, List<category> resList) {
         this.context = context;
-        this.resList = resList;
+        this.category = resList;
     }
 
     @Override
     public int getCount() {
-        return resList.size();
+        return category.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return resList.get(position);
+        return category.get(position);
     }
 
     @Override
@@ -42,13 +42,13 @@ public class ResListAdapter_2 extends BaseAdapter  {
 
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-             convertView = inflater.inflate(R.layout.restaurant, parent, false);
+             convertView = inflater.inflate(R.layout.category, parent, false);
         }
-        TextView resName = (TextView) convertView.findViewById((R.id.textViewResName));
+        TextView resName = (TextView) convertView.findViewById((R.id.resName));
 
 
-        restaurant reslistItem = resList.get(position);
-        resName.setText(reslistItem.getName());
+        category catlistItem = category.get(position);
+        resName.setText(catlistItem.getName());
 
         return convertView;
     }

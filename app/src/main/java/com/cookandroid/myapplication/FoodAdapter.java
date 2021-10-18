@@ -1,7 +1,6 @@
 package com.cookandroid.myapplication;
 
 import android.content.Context;
-import android.graphics.Movie;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,13 +11,13 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class foodAdapter extends BaseAdapter {
+public class FoodAdapter extends BaseAdapter {
     private Context context;
-    private ArrayList<food> layoutInflater;
-    private List<food> foodList;
+    private ArrayList<Food> layoutInflater;
+    private List<Food> foodList;
 
 
-    public foodAdapter(Context context, ArrayList<food> foodList) {
+    public FoodAdapter(Context context, ArrayList<Food> foodList) {
         this.context = context;
         this.foodList = foodList;
     }
@@ -51,13 +50,13 @@ public class foodAdapter extends BaseAdapter {
         ImageView foodImg = (ImageView) convertView.findViewById(R.id.imageViewFoodImg);
         TextView foodName = (TextView) convertView.findViewById(R.id.textViewFoodName);
         TextView foodPrice = (TextView) convertView.findViewById(R.id.textViewFoodPrice);
-        TextView foodDescription = (TextView) convertView.findViewById(R.id.textViewFoodDescrip);
+        TextView foodDescription = (TextView) convertView.findViewById(R.id.textViewFoodInfo);
 
-        food fooditem = foodList.get(position);
+        Food fooditem = foodList.get(position);
 
         foodImg.setImageResource(fooditem.getFoodImg());
         foodName.setText(fooditem.getFoodName());
-        foodPrice.setText(fooditem.getFoodPrice());
+        foodPrice.setText(fooditem.getFoodPrice()+"원");
         foodDescription.setText(fooditem.getFoodInfo());
 
         return convertView;

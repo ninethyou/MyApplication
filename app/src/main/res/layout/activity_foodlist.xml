@@ -4,30 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RestActivity">
+    tools:context=".FoodListActivity">
 
     <TextView
-        android:id="@+id/textView_resName"
-        android:layout_width="112dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="48dp"
+        android:id="@+id/textView_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:textSize="35dp"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline6"
+        android:id="@+id/guideline7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="148dp" />
+        android:background="@color/black"
+        app:layout_constraintGuide_begin="80dp" />
 
     <ListView
         android:id="@+id/listviewFood"
         android:layout_width="match_parent"
         android:layout_height="500dp"
+        android:numColumns="2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline6" />
+        app:layout_constraintTop_toTopOf="@+id/guideline7" />
+
+    <include layout="@layout/floatingbutton"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,46 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".foodDetail">
+    tools:context=".FoodDetailActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout5"
-        android:layout_width="344dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="500dp"
-        android:orientation="horizontal"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout4"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+        <Button
+            android:id="@+id/addbasket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="장바구니 담기"
+            android:textSize="30dp"
+            app:backgroundTint="#2196F3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
 
         <ImageView
             android:id="@+id/wish"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginRight="30dp"
-            android:src="@drawable/wish"/>
-
-        <Button
-            android:id="@+id/order"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="주문하기"
-            android:textSize="35dp"
-            app:backgroundTint="#2196F3" />
-
-        <ImageView
-            android:id="@+id/basket"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="30dp"
-            android:src="@drawable/cart"/>
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/wishoff"
+            app:layout_constraintEnd_toStartOf="@id/addbasket"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include layout="@layout/floatingbutton"/>
 
     <LinearLayout
         android:id="@+id/linearLayout4"
@@ -60,9 +55,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:srcCompat="@tools:sample/avatars" />
-
         <TextView
-            android:id="@+id/foodName"
+            android:id="@+id/foodname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="음식 이름"
+            android:textSize="30dp" />
+        <TextView
+            android:id="@+id/foodinfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -71,13 +72,6 @@
             android:text="설명"
             android:textSize="16dp"/>
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:hint="음식 이름"
-            android:textSize="30dp" />
 
         <LinearLayout
             android:layout_width="281dp"
@@ -121,7 +115,7 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="리뷰"
+            android:text="한줄평"
             android:textSize="20dp" />
 
         <TextView
