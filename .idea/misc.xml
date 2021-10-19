@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_admin.xml" value="0.21875" />
+        <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_autologin.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_basket.xml" value="0.21875" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_food_detail.xml" value="0.21875" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_login.xml" value="0.1899696048632219" />
@@ -14,6 +15,7 @@
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/food.xml" value="0.23333333333333334" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/fragment_dashboard.xml" value="0.21875" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/fragment_home.xml" value="0.21875" />
+        <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/fragment_myinfo.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/fragment_notifications.xml" value="0.21875" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/layout_admin.xml" value="0.21875" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/layout_basket.xml" value="0.21875" />

@@ -13,9 +13,9 @@ public class CategoryAdapter extends BaseAdapter  {
 
     private Context context;
     private LayoutInflater layoutInflater;
-    private List<category> category;
+    private List<Category> category;
 
-    public CategoryAdapter(Context context, List<category> resList) {
+    public CategoryAdapter(Context context, List<Category> resList) {
         this.context = context;
         this.category = resList;
     }
@@ -47,7 +47,7 @@ public class CategoryAdapter extends BaseAdapter  {
         TextView resName = (TextView) convertView.findViewById((R.id.resName));
 
 
-        category catlistItem = category.get(position);
+        Category catlistItem = category.get(position);
         resName.setText(catlistItem.getName());
 
         return convertView;

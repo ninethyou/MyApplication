@@ -1,16 +1,16 @@
 package com.cookandroid.myapplication;
 
-public class category {
+public class Category {
 
     String name;
     String OpTime;
     String congestion;
 
-    public category(String name){
+    public Category(String name){
         this.name = name;
     }
 
-    public category(String name, String OpTime, String congestion) {
+    public Category(String name, String OpTime, String congestion) {
         this.name = name;
         this.OpTime = OpTime;
         this.congestion = congestion;

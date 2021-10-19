@@ -29,8 +29,6 @@ public class FoodDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_detail);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
 
         btn_addbasket = (Button) findViewById(R.id.addbasket);
         btn_plus = (Button) findViewById(R.id.plus);
@@ -61,7 +59,7 @@ public class FoodDetailActivity extends AppCompatActivity {
         fb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), OrderDetailActivity.class);
+                Intent intent = new Intent(getApplicationContext(), BasketActivity.class);
                 startActivity(intent);
             }
         });

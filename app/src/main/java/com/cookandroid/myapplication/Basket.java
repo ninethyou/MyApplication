@@ -1,12 +1,12 @@
 package com.cookandroid.myapplication;
 
-public class basket {
+public class Basket {
     String foodName;
     String foodNo;
     int foodPrice;
     int foodCnt;
 
-    public basket(String foodName, String foodNo, int foodPrice, int foodCnt) {
+    public Basket(String foodName, String foodNo, int foodPrice, int foodCnt) {
         this.foodName = foodName;
         this.foodNo = foodNo;
         this.foodPrice = foodPrice;

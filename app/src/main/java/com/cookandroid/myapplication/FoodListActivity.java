@@ -34,16 +34,13 @@ public class FoodListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foodlist);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-
         Intent intent = getIntent();
 
         fb = (FloatingActionButton) findViewById(R.id.floatingBasket);
         fb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), OrderDetailActivity.class);
+                Intent intent = new Intent(getApplicationContext(), BasketActivity.class);
                 startActivity(intent);
             }
         });
@@ -90,16 +87,6 @@ public class FoodListActivity extends AppCompatActivity {
 
 
     }
-        public boolean onOptionItemSelected (MenuItem menuItem)
-        {
-            switch (menuItem.getItemId()) {
-                case android.R.id.home:
-                    onBackPressed();
-                    finish();
-                    return true;
-            }
-            return super.onOptionsItemSelected(menuItem);
-        }
 
 }
 

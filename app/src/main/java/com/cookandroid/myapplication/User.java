@@ -6,6 +6,14 @@ public class User {
     private String name;
     private String studentNum;
 
+    public User(){}
+    public User(String ID, String PW, String name, String studentNum) {
+        this.ID = ID;
+        this.PW = PW;
+        this.name = name;
+        this.studentNum = studentNum;
+    }
+
     public String getID() {
         return ID;
     }

@@ -24,8 +24,6 @@ public class WishList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wish_list);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
@@ -76,14 +74,4 @@ public class WishList extends AppCompatActivity {
         });
     }
 
-    public boolean onOptionItemSelected (MenuItem menuItem)
-    {
-        switch (menuItem.getItemId()) {
-            case android.R.id.home:
-                onBackPressed();
-                finish();
-                return true;
-        }
-        return super.onOptionsItemSelected(menuItem);
-    }
 }

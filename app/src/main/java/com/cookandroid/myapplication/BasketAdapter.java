@@ -7,28 +7,22 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.cookandroid.myapplication.R;
-import com.cookandroid.myapplication.basket;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class basketAdapter extends BaseAdapter {
+public class BasketAdapter extends BaseAdapter {
 
- private    ArrayList<basket> items;
+ private    ArrayList<Basket> items;
  private  Context context;
- private  List<basket> basketList;
+ private  List<Basket> basketList;
 
-    public basketAdapter( Context context,ArrayList<basket> items) {
+    public BasketAdapter(Context context, ArrayList<Basket> items) {
         this.items = items;
         this.context = context;
     }
 
 
-    public void addItem(basket item)
+    public void addItem(Basket item)
     {
         items.add(item);
     }
@@ -38,7 +32,7 @@ public class basketAdapter extends BaseAdapter {
         return items.size();
     }
 
-    public basket getItem(int position)
+    public Basket getItem(int position)
     {
         return items.get(position);
     }
@@ -65,12 +59,12 @@ public class basketAdapter extends BaseAdapter {
         TextView textView_foodCnt = (TextView) convertView.findViewById(R.id.textView_BasketfoodCnt);
         TextView textView_foodTotalPrice = (TextView) convertView.findViewById(R.id.textView_BasketTotalPrice);
 
-        basket basket = items.get(position);
+        Basket basket = items.get(position);
 
         textView_foodNo.setText(basket.getFoodNo());
         textView_foodNo.setText(basket.getFoodName());
-        textView_foodNo.setText(basket.getFoodPrice());
-        textView_foodNo.setText(basket.getFoodCnt());
+        textView_foodNo.setText(String.valueOf(basket.getFoodPrice()));
+        textView_foodNo.setText(String.valueOf(basket.getFoodCnt()));
         Integer price = basket.getFoodPrice();
         Integer cnt = basket.getFoodCnt();
         Integer sum = price * cnt;

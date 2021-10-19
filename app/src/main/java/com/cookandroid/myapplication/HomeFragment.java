@@ -54,10 +54,6 @@ public class HomeFragment extends Fragment {
             {
                 Intent intent = new Intent(getActivity(),WishList.class);
                 startActivity(intent);
-
-
-
-
             }
         });
 
@@ -72,8 +68,6 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-
                 restaurant rest = (restaurant) parent.getAdapter().getItem(position);
 
                 GetData task = new GetData(){

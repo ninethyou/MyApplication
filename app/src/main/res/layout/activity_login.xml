@@ -4,69 +4,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TableLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:stretchColumns="0,1,2,3"
-        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="vertical"
+        android:layout_margin="20dp"
         app:layout_constraintTop_toTopOf="parent">
-
-        <TableRow
+        <EditText
+            android:id="@+id/uid"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="right"
-                android:text="ID : " />
-
-            <EditText
-                android:id="@+id/uid"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_span="3" />
-        </TableRow>
-
-        <TableRow
+            android:layout_height="wrap_content"
+            android:hint="ID"/>
+        <EditText
+            android:id="@+id/upw"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:hint="Password"/>
+            android:layout_height="wrap_content">
+        <CheckBox
+            android:id="@+id/autologin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="자동 로그인"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="right"
-                android:text="password : " />
-
-            <EditText
-                android:id="@+id/upw"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_span="3" />
-        </TableRow>
-
-        <TableRow
+        <Button
+            android:id="@+id/btn_signin"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <Button
-                android:id="@+id/btn_signup"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:backgroundTint="@color/sky_blue"
-                android:text="회원가입" />
-
-            <Button
-                android:id="@+id/btn_signin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_column="3"
-                android:backgroundTint="@color/gray_200"
-                android:text="로그인" />
-        </TableRow>
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:backgroundTint="@color/sky_blue"
+            android:text="로그인" />
+        <Button
+            android:id="@+id/btn_signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/gray_200"
+            android:textColor="@color/black"
+            android:text="회원가입"/>
+    </LinearLayout>
 
 
-    </TableLayout>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,7 +21,7 @@ public class CategoryActivity extends AppCompatActivity {
     private ListView listView;
     private GridView gridView;
     private CategoryAdapter adapter;
-    private ArrayList<category> category;
+    private ArrayList<Category> category;
     private FloatingActionButton fb;
 
 
@@ -31,23 +31,20 @@ public class CategoryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_category);
 
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-
         fb = (FloatingActionButton) findViewById(R.id.floatingBasket);
         fb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), OrderDetailActivity.class);
+                Intent intent = new Intent(getApplicationContext(), BasketActivity.class);
                 startActivity(intent);
             }
         });
 
-        category = new ArrayList<category>();
+        category = new ArrayList<Category>();
 
         Log.e("rest", Integer.toString(DB.getDataList().size()));
         for(int i = 1; i<DB.getDataList().size();i++){
-            category.add(new category(DB.getData(i).toString()));
+            category.add(new Category(DB.getData(i).toString()));
             Log.d("rest",DB.getData(i).toString());
             Log.w("rest",category.get(i-1).getName());
         }
@@ -58,7 +55,7 @@ public class CategoryActivity extends AppCompatActivity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long l) {
-                category n = (category) parent.getAdapter().getItem(position);
+                Category n = (Category) parent.getAdapter().getItem(position);
                 Log.d("onclick", n.getName());
 
 
@@ -79,18 +76,5 @@ public class CategoryActivity extends AppCompatActivity {
             }
         });
     }
-
-    public boolean onOptionItemSelected (MenuItem menuItem)
-    {
-        switch (menuItem.getItemId()) {
-            case android.R.id.home:
-                onBackPressed();
-                finish();
-                return true;
-        }
-        return super.onOptionsItemSelected(menuItem);
-    }
-
-
 }
 
