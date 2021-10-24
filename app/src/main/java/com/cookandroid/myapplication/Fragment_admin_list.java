@@ -32,7 +32,7 @@ public class Fragment_admin_list extends Fragment {
         ListView OrderListView = rootview.findViewById(R.id.Orderlist_admin);
         ArrayList<Order> orderArrayList = new ArrayList<Order>();
 
-          orderArrayList.add(new Order("12345","20-01-01","15:00","25000"));
+        orderArrayList.add(new Order("12345","20-01-01","15:00","25000"));
         OrderAdapter adapter = new OrderAdapter(rootview.getContext(), orderArrayList);
 
         return inflater.inflate(R.layout.fragment_admin_list, container, false);
