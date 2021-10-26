@@ -13,27 +13,39 @@
         app:layout_constraintTop_toBottomOf="@id/linearLayout4"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
+
+
+        <Button
+            android:id="@+id/button_order2"
+            android:layout_width="180dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="6dp"
+            android:backgroundTint="@color/sky_blue"
+            android:text="주문하기"
+            android:textSize="20dp"
+            app:layout_constraintStart_toEndOf="@+id/addbasket"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <Button
             android:id="@+id/addbasket"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="180dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="7dp"
             android:text="장바구니 담기"
-            android:textSize="30dp"
+            android:textSize="20dp"
             app:backgroundTint="#2196F3"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
+            app:layout_constraintStart_toEndOf="@+id/wish"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/wish"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="6dp"
             android:src="@drawable/wishoff"
-            app:layout_constraintEnd_toStartOf="@id/addbasket"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
