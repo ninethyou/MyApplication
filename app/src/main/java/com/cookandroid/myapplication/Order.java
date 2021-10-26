@@ -2,15 +2,20 @@ package com.cookandroid.myapplication;
 
 public class Order {
     String orderNo;
-    String orderDate;
+    String orderFood;
     String orderTime;
     String orderPrice;
+    String orderCount;
+    String orderState;
 
-    public Order(String orderNo, String orderDate, String orderTime, String orderPrice) {
+
+    public Order(String orderNo, String orderFood, String orderTime, String orderPrice, String orderCount, String orderState) {
         this.orderNo = orderNo;
-        this.orderDate = orderDate;
+        this.orderFood = orderFood;
         this.orderTime = orderTime;
         this.orderPrice = orderPrice;
+        this.orderCount = orderCount;
+        this.orderState = orderState;
     }
 
     public String getOrderNo() {
@@ -21,12 +26,12 @@ public class Order {
         this.orderNo = orderNo;
     }
 
-    public String getOrderDate() {
-        return orderDate;
+    public String getOrderFood() {
+        return orderFood;
     }
 
-    public void setOrderDate(String orderDate) {
-        this.orderDate = orderDate;
+    public void setOrderFood(String orderFood) {
+        this.orderFood = orderFood;
     }
 
     public String getOrderTime() {
@@ -44,4 +49,12 @@ public class Order {
     public void setOrderPrice(String orderPrice) {
         this.orderPrice = orderPrice;
     }
+
+    public String getOrderCount() { return orderCount; }
+
+    public void setOrderCount(String orderCount) { this.orderCount = orderCount; }
+
+    public String getOrderState() { return orderState; }
+
+    public void setOrderState(String orderState) { this.orderState = orderState; }
 }

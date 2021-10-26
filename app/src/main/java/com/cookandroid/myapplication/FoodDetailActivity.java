@@ -1,6 +1,5 @@
 package com.cookandroid.myapplication;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,8 +12,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 public class FoodDetailActivity extends AppCompatActivity {
 
     Button btn_addbasket, btn_plus, btn_minus;
@@ -23,7 +20,6 @@ public class FoodDetailActivity extends AppCompatActivity {
     Food selectfood;
     int count;
     String isWishOn;
-    private FloatingActionButton fb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,22 +51,16 @@ public class FoodDetailActivity extends AppCompatActivity {
             img_wish.setImageResource(R.drawable.wishon);
         }
 
-        fb = (FloatingActionButton) findViewById(R.id.floatingBasket);
-        fb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), BasketActivity.class);
-                startActivity(intent);
-            }
-        });
 
         count =1;
 
         btn_addbasket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DB.addListBasket(selectfood);
+                Food food = new Food(selectfood.getRestaurant(), selectfood.getCategory(), selectfood.getFoodName(), selectfood.getFoodPrice(), selectfood.getFoodInfo(), count);
+                DB.addFoodList_Basket(food);
                 Toast.makeText(getApplicationContext(), "장바구니에 추가되었습니다.", Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
 
@@ -101,7 +91,6 @@ public class FoodDetailActivity extends AppCompatActivity {
         img_wish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 if(isWishOn.equals("0")){
                     SendData task = new SendData(FoodDetailActivity.this);
                     String postParameters = "ID="+DB.getUser().getID()+"&food="+selectfood.getFoodName()+"&restaurant="+selectfood.getRestaurant()+"&code=0";
@@ -121,8 +110,6 @@ public class FoodDetailActivity extends AppCompatActivity {
 
                     Toast.makeText(getApplicationContext(), "위시리스트에서 삭제하였습니다.", Toast.LENGTH_SHORT).show();
                 }
-
-
             }
         });
 

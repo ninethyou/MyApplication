@@ -23,6 +23,7 @@ public class CategoryActivity extends AppCompatActivity {
     private CategoryAdapter adapter;
     private ArrayList<Category> category;
     private FloatingActionButton fb;
+    private String rest;
 
 
     @Override
@@ -30,6 +31,9 @@ public class CategoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
 
+
+        Intent intent = getIntent();
+        rest = intent.getExtras().getString("rest");
 
         fb = (FloatingActionButton) findViewById(R.id.floatingBasket);
         fb.setOnClickListener(new View.OnClickListener() {
@@ -72,7 +76,7 @@ public class CategoryActivity extends AppCompatActivity {
                         Log.d("phptest", "POST resaponse - "+s);
                     }
                 };
-                task.execute("http://"+ DB.getIP()+"/menulist.php?category="+n.getName());
+                task.execute("http://"+ DB.getIP()+"/menulist.php?category="+n.getName()+"&rest="+rest);
             }
         });
     }

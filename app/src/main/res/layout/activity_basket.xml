@@ -21,12 +21,10 @@
         android:id="@+id/button_order"
         android:layout_width="196dp"
         android:layout_height="58dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="204dp"
         android:backgroundTint="@color/sky_blue"
         android:text="주문하기"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+        app:layout_constraintLeft_toRightOf="@id/textview_주문방법"
+        app:layout_constraintTop_toTopOf="@id/guideline5"/>
 
     <TextView
         android:id="@+id/textView_totalText"
@@ -67,6 +65,7 @@
         android:id="@+id/basketList"
         android:layout_width="match_parent"
         android:layout_height="332dp"
+        android:layout_margin="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" >
     </ListView>

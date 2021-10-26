@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     HomeFragment fragment1;
     MyInfoFragment fragment2;
-    NotificationsFragment fragment3;
+    OrderListFragment fragment3;
 
 
     @Override
@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
         fragment1 = new HomeFragment();
         fragment2 = new MyInfoFragment();
-        fragment3 = new NotificationsFragment();
+        fragment3 = new OrderListFragment();
 
 
         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment1).commit();
@@ -55,4 +55,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 }

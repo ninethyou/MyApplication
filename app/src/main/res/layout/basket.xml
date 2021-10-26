@@ -8,38 +8,29 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="60dp"
         android:background="@color/gray_100"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TableRow
-            android:layout_width="350dp"
-            android:layout_height="40dp">
-
-            <TextView
-                android:id="@+id/textView_BasketfoodNo"
-                android:layout_height="wrap_content"
-                android:text="FoodNo" />
-
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/textView_BasketfoodName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
                 android:text="BasketfoodName" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="350dp"
-            android:layout_height="40dp">
-
             <TextView
                 android:id="@+id/textView_BasketfoodCnt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="BasketfoodCnt" />
+        </TableRow>
 
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/textView_BasketfoodPrice"
                 android:layout_width="wrap_content"

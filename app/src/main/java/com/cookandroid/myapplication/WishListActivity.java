@@ -11,19 +11,31 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class WishList extends AppCompatActivity {
+public class WishListActivity extends AppCompatActivity {
     private ListView listView;
     private FoodAdapter adapter;
     private ArrayList<Food> wishlist;
     private User user;
+    private FloatingActionButton fb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wish_list);
+
+        fb = (FloatingActionButton) findViewById(R.id.floatingBasket);
+        fb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), BasketActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -44,7 +56,7 @@ public class WishList extends AppCompatActivity {
                 Log.d("wish", DB.getData(0).toString());
                 for(int i=0;i<DB.getDataList().size()/5;i++){
                     wishlist.add(new Food(R.drawable.gimbap,DB.getData(i*5+1).toString(),DB.getData(i*5+2).toString(),DB.getData(i*5+3).toString(),
-                            DB.getData(i*5+4).toString(),DB.getData(i*5+5).toString()));
+                           Integer.parseInt(DB.getData(i*5+4).toString()),DB.getData(i*5+5).toString()));
                 }
                 listView.setAdapter(adapter);
             }

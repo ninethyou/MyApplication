@@ -6,6 +6,11 @@ public class Basket {
     int foodPrice;
     int foodCnt;
 
+    public Basket(String foodName, int foodPrice, int foodCnt) {
+        this.foodName = foodName;
+        this.foodPrice = foodPrice;
+        this.foodCnt = foodCnt;
+    }
     public Basket(String foodName, String foodNo, int foodPrice, int foodCnt) {
         this.foodName = foodName;
         this.foodNo = foodNo;

@@ -38,7 +38,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <include layout="@layout/floatingbutton"/>
+
 
     <LinearLayout
         android:id="@+id/linearLayout4"

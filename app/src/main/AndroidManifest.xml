@@ -22,7 +22,7 @@
             android:exported="true"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".WishList"
+            android:name=".WishListActivity"
             android:exported="true"
             android:parentActivityName=".MainActivity" />
         <activity
@@ -41,7 +41,7 @@
         </activity>
         <activity android:name=".RegisterActivity" />
         <activity android:name=".CategoryActivity" />
-        <activity android:name=".AutoLoginActivity">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

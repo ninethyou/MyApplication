@@ -1,6 +1,7 @@
 package com.cookandroid.myapplication;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +13,9 @@ import java.util.List;
 
 public class BasketAdapter extends BaseAdapter {
 
- private    ArrayList<Basket> items;
- private  Context context;
- private  List<Basket> basketList;
+ private ArrayList<Basket> items;
+ private Context context;
+ private int sumPrice;
 
     public BasketAdapter(Context context, ArrayList<Basket> items) {
         this.items = items;
@@ -44,7 +45,6 @@ public class BasketAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        final int pos = position;
         final Context context = parent.getContext();
 
         if (convertView == null) {
@@ -52,7 +52,6 @@ public class BasketAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.basket, parent, false);
         }
 
-        TextView textView_foodNo = (TextView) convertView.findViewById(R.id.textView_BasketfoodNo);
         TextView textView_foodName = (TextView) convertView.findViewById(R.id.textView_BasketfoodName);
         TextView textView_foodPrice = (TextView) convertView.findViewById(R.id.textView_BasketfoodPrice);
 
@@ -61,14 +60,14 @@ public class BasketAdapter extends BaseAdapter {
 
         Basket basket = items.get(position);
 
-        textView_foodNo.setText(basket.getFoodNo());
-        textView_foodNo.setText(basket.getFoodName());
-        textView_foodNo.setText(String.valueOf(basket.getFoodPrice()));
-        textView_foodNo.setText(String.valueOf(basket.getFoodCnt()));
+        textView_foodName.setText(basket.getFoodName());
+        textView_foodPrice.setText(String.valueOf(basket.getFoodPrice()));
+        textView_foodCnt.setText(String.valueOf(basket.getFoodCnt()));
         Integer price = basket.getFoodPrice();
         Integer cnt = basket.getFoodCnt();
-        Integer sum = price * cnt;
-        textView_foodNo.setText(sum.toString());
+        sumPrice = price * cnt;
+        Log.d("price", Integer.toString(sumPrice));
+        textView_foodTotalPrice.setText(Integer.toString(sumPrice));
         return convertView;
     }
 

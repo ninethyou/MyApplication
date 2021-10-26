@@ -5,13 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.ArrayList;
-import java.util.List;
 
 public class OrderAdapter extends BaseAdapter
 {
@@ -60,15 +57,19 @@ public class OrderAdapter extends BaseAdapter
         }
 
             TextView orderNo = convertView.findViewById(R.id.textView_orderNo_item);
-            TextView orderDate = convertView.findViewById(R.id.textView_orderDate_item);
+            TextView orderFood = convertView.findViewById(R.id.textView_orderFood_item);
             TextView orderTime = convertView.findViewById(R.id.textView_orderTime_item);
             TextView orderPrice = convertView.findViewById(R.id.textView_orderPrice_item);
+            TextView orderCount = convertView.findViewById(R.id.textView_orderCount_item);
+            TextView orderState = convertView.findViewById(R.id.textView_orderState_item);
 
             Order order = items.get(position);
-            orderNo.setText(order.getOrderNo());
-            orderDate.setText(order.getOrderDate());
+            orderNo.setText("No."+order.getOrderNo());
+            orderFood.setText(order.getOrderFood());
             orderTime.setText(order.getOrderTime());
-            orderPrice.setText(order.getOrderPrice());
+            orderPrice.setText(order.getOrderPrice()+"원");
+            orderCount.setText("x "+order.getOrderCount());
+            orderState.setText(order.getOrderState());
 
     return convertView;
     }

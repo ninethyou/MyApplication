@@ -93,42 +93,11 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-    /*
-    class InsertData extends AsyncTask<String, Void, String> {
-        ProgressDialog progressDialog;
 
-        protected void onPreExecute(){
-            super.onPreExecute();
-            progressDialog = ProgressDialog.show(LoginActivity.this,"Pleas Wait", null, true, true);
-        }
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
+    @Override
+    protected void onResume() {
+        super.onResume();
 
-            progressDialog.dismiss();
-            if(s.equals("1")){
-                user.setID(DB.getData(1).toString());
-                user.setPW(DB.getData(2).toString());
-                user.setName(DB.getData(3).toString());
-                user.setStudentNum(DB.getData(4).toString());
-                DB.setUser(user);
-
-                Toast.makeText(getApplicationContext(), "로그인 성공", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
-            }else{
-                Toast.makeText(getApplicationContext(), "아이디 또는 비밀번호가 다릅니다.", Toast.LENGTH_SHORT).show();
-
-            }
-            Log.d(TAG, "POST resaponse - "+s);
-
-        }
-        @Override
-        protected String doInBackground(String... params) {
-            String serverURL = (String)params[0];
-            return GetData.get(serverURL);
-
-
-        }
-    }*/
+        DB.getFoodlist_Basket().clear();
+    }
 }

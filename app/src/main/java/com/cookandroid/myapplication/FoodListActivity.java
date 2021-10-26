@@ -52,7 +52,7 @@ public class FoodListActivity extends AppCompatActivity {
 
         foodList = new ArrayList<Food>();
         for(int i= 0;i<data.size()/5;i++){
-            foodList.add(new Food(R.drawable.gimbap, data.get(i*5).toString(), data.get(i*5+1).toString(), data.get(i*5+2).toString(), data.get(i*5+3).toString(),
+            foodList.add(new Food(R.drawable.gimbap, data.get(i*5).toString(), data.get(i*5+1).toString(), data.get(i*5+2).toString(),Integer.parseInt(data.get(i*5+3).toString()),
                         data.get(i*5+4).toString()));
         }
 
