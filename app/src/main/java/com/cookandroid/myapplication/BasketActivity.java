@@ -11,10 +11,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import kr.co.bootpay.Bootpay;
 import kr.co.bootpay.BootpayAnalytics;
@@ -42,6 +46,10 @@ public class BasketActivity extends AppCompatActivity {
     private int totalPrice;
     private TextView tv_totalPrice;
     private int stuck = 10;
+    private RadioButton orderOption;
+    private RadioGroup rg;
+    private int hour, minute;
+    private String min;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,9 +77,24 @@ public class BasketActivity extends AppCompatActivity {
         listView.setAdapter(basketAdapter);
 
         timePicker = (TimePicker)findViewById(R.id.timePicker1);
+        timePicker.setIs24HourView(true);
+        hour = timePicker.getHour();
+        minute = timePicker.getMinute();
+        timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+            @Override
+            public void onTimeChanged(TimePicker timePicker, int h, int m) {
+                hour = h;
+                minute = m;
+            }
+        });
+        if(minute<10) min="0"+Integer.toString(minute);
+        else min=Integer.toString(minute);
+
         btnDirect = (RadioButton) findViewById(R.id.radioButton_direct);
         btnResv = (RadioButton) findViewById(R.id.radioButton_resv);
         order = (Button) findViewById(R.id.button_order);
+
+        rg = (RadioGroup) findViewById(R.id.radioGroup) ;
 
         ConstraintLayout layout = (ConstraintLayout) findViewById(R.id.constraintLayout2);
 
@@ -84,13 +107,32 @@ public class BasketActivity extends AppCompatActivity {
                 User user = DB.getUser();
                 for(int i=0;i<foodlist.size();i++){
                     SendData task = new SendData(BasketActivity.this);
-                    String postParameters="id="+user.getID()+"&rest="+foodlist.get(i).getRestaurant()+"&cat="+foodlist.get(i).getCategory()+
-                                    "&food="+foodlist.get(i).getFoodName()+"&count="+foodlist.get(i).getFoodCount()+"&state=wait"+"&pay="+foodlist.get(i).getFoodPrice()*
-                                    foodlist.get(i).getFoodCount();
-                    task.execute("http://"+DB.getIP()+"/order.php",postParameters);
+                    String postParameters;
+                    if(rg.getCheckedRadioButtonId()==R.id.radioButton_direct) {
+                        postParameters="id="+user.getID()+"&rest="+foodlist.get(i).getRestaurant()+"&cat="+foodlist.get(i).getCategory()+
+                                "&food="+foodlist.get(i).getFoodName()+"&count="+foodlist.get(i).getFoodCount()+"&state=wait"+"&pay="+foodlist.get(i).getFoodPrice()*
+                                foodlist.get(i).getFoodCount()+"&option=0";
+                        task.execute("http://"+DB.getIP()+"/order.php",postParameters);
+                        Toast.makeText(getApplicationContext(), "바로 주문", Toast.LENGTH_SHORT).show();
+
+                    }else if(rg.getCheckedRadioButtonId()==R.id.radioButton_resv){
+                        long now = System.currentTimeMillis();
+                        Date date = new Date(now);
+                        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+                        String getTime = sdf.format(date)+hour+min+"00";
+                        Log.d("time", getTime);
+
+                        postParameters="id="+user.getID()+"&rest="+foodlist.get(i).getRestaurant()+"&cat="+foodlist.get(i).getCategory()+
+                                "&food="+foodlist.get(i).getFoodName()+"&count="+foodlist.get(i).getFoodCount()+"&state=wait"+"&pay="+foodlist.get(i).getFoodPrice()*
+                                foodlist.get(i).getFoodCount()+"&option=1+&time="+getTime;
+                        task.execute("http://"+DB.getIP()+"/order.php",postParameters);
+                        Toast.makeText(getApplicationContext(), "예약 주문", Toast.LENGTH_SHORT).show();
+                    }
+
+
+
                 }
                 DB.resetFoodList_Basket();
-
 /*
 결제 모듈
   */
@@ -166,16 +208,7 @@ public class BasketActivity extends AppCompatActivity {
 
 
     }
-    public boolean onOptionItemSelected(MenuItem menuItem)
-    {
-        switch (menuItem.getItemId()) {
-            case android.R.id.home:
-                onBackPressed();
-                finish();
-                return true;
-        }
-        return super.onOptionsItemSelected(menuItem);
-    }
+
 
 
 }

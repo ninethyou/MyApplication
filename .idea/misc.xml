@@ -13,6 +13,7 @@
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_main.xml" value="0.22760416666666666" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_order_detail.xml" value="0.21875" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_orderlist.xml" value="0.20989583333333334" />
+        <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_payment.xml" value="0.21875" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_register.xml" value="0.33" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_rest.xml" value="0.21875" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_review.xml" value="0.25" />
@@ -20,6 +21,7 @@
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_wish_list.xml" value="0.22760416666666666" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/basket.xml" value="0.33" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/category.xml" value="0.22760416666666666" />
+        <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/floatingbutton.xml" value="0.18819655521783182" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/food.xml" value="0.23333333333333334" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/fragment_admin_list.xml" value="0.22760416666666666" />
         <entry key="..\:/Users/choih/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/fragment_admin_receipt.xml" value="0.22760416666666666" />
