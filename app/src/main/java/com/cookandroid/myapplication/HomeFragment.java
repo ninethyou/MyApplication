@@ -2,6 +2,7 @@ package com.cookandroid.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -55,12 +56,9 @@ public class HomeFragment extends Fragment {
         });
 
         resList = new ArrayList<>();
-        resList.add(new restaurant("구학","10:00 - 12:00","혼잡"));
-        resList.add(new restaurant("신학","10:00 - 12:00","혼잡"));
+
 
         resListView = (ListView) rootview.findViewById((R.id.restaurantListView));
-        adapter = new ResListAdapter(getContext(),resList);
-        resListView.setAdapter(adapter);
         resListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
@@ -80,9 +78,45 @@ public class HomeFragment extends Fragment {
                 task.execute("http://"+ DB.getIP()+"/restlist.php?rest="+rest.getName());
             }
         });
-
-
             return rootview;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        GetData task = new GetData(){
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                resList.clear();
+                int k = 0 , n = 0;
+                Log.d("congestion", Integer.toString(DB.getDataList().size()));
+                for(int i=0;i< DB.getDataList().size()/2;i++){
+                    if(DB.getData(i*2+1).toString().equals("구학")){
+                        k+=1;
+                    }else n+=1;
+                }
+                resList.add(new restaurant("구학","9:00 - 18:00",congestion(k), k));
+                resList.add(new restaurant("신학","9:00 - 18:00",congestion(n), n));
+                resListView.setAdapter(adapter);
+
+            }
+        };
+
+        task.execute("http://"+DB.getIP()+"/congestion.php?ID="+DB.getUser().getID()+"&code=2&rest=구학");
+
+        adapter = new ResListAdapter(getContext(),resList);
+    }
+
+    String congestion(int a){
+        /*if(a<66) return "쾌적";
+        else if(66<=a && a<132) return "보통";
+        else return "혼잡";*/
+
+        if(a<3) return "쾌적";
+        else if(3<=a && a<6) return "보통";
+        else return "혼잡";
     }
 
 }

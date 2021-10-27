@@ -5,15 +5,17 @@ public class restaurant {
     String name;
     String OpTime;
     String congestion;
+    int num;
 
     public restaurant(String name){
         this.name = name;
     }
 
-    public restaurant(String name, String OpTime, String congestion) {
+    public restaurant(String name, String OpTime, String congestion, int num) {
         this.name = name;
         this.OpTime = OpTime;
         this.congestion = congestion;
+        this.num = num;
     }
 
     public String getName() {
@@ -39,4 +41,8 @@ public class restaurant {
     public void setCongestion(String congestion) {
         this.congestion = congestion;
     }
+
+    public int getNum() {return num; }
+
+    public void setNum(int num) {this.num = num; }
 }

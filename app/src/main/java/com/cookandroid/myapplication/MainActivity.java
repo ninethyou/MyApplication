@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         fragment3 = new OrderListFragment();
 
 
+
+
         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment1).commit();
         BottomNavigationView bottomNavigation = findViewById(R.id.nav_view_admin);
         bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -47,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.container, fragment3).commit();
+
 
                         return true;
                 }

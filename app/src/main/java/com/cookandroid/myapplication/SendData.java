@@ -12,7 +12,6 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 public class SendData extends AsyncTask<String, Void, String> {
-    ProgressDialog progressDialog;
     Activity activity;
 
     SendData(Activity a){
@@ -22,13 +21,11 @@ public class SendData extends AsyncTask<String, Void, String> {
     protected void onPreExecute(){
         super.onPreExecute();
 
-        progressDialog = ProgressDialog.show(activity,"Pleas Wait", null, true, true);
     }
     @Override
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
 
-        progressDialog.dismiss();
         Log.d("php", "POST resaponse - "+s);
     }
     protected String doInBackground(String... params){

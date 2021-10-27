@@ -8,29 +8,23 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="134dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="32dp"
-        android:text="주문내역"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <Button
-        android:id="@+id/btn_refresh"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="refresh"
-        android:layout_marginBottom="60dp"
+        android:layout_height="48dp"
+        android:text="주문 현황"
+        android:textSize="35dp"
+        android:layout_marginTop="30dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintLeft_toLeftOf="parent"/>
 
-    <ListView
-        android:id="@+id/orderList"
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/orderlist"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        android:layout_height="500dp"
+        android:layout_margin="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

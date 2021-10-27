@@ -56,9 +56,19 @@
         android:id="@+id/textView_orderState_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="wait"
+        android:text="조리 중"
         android:textSize="30dp"
         android:layout_margin="20dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/textView_orderWTime_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="대기 시간 : 00분"
+        android:textSize="17dp"
+        android:layout_marginRight="20dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 

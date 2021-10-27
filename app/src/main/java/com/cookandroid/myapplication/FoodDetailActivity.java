@@ -10,8 +10,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 import kr.co.bootpay.Bootpay;
 import kr.co.bootpay.enums.Method;
@@ -34,6 +37,9 @@ public class FoodDetailActivity extends AppCompatActivity {
     Food selectfood;
     int count;
     String isWishOn;
+    ArrayList<Review> reviewlist;
+    ListView listView;
+    ReviewAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +72,14 @@ public class FoodDetailActivity extends AppCompatActivity {
         }else{
             img_wish.setImageResource(R.drawable.wishon);
         }
+
+        reviewlist = new ArrayList<Review>();
+
+
+
+        listView =(ListView) findViewById(R.id.reviewlist);
+        adapter = new ReviewAdapter(getApplicationContext(),reviewlist);
+
 
 
         count =1;
@@ -197,15 +211,25 @@ public class FoodDetailActivity extends AppCompatActivity {
 
     }
 
-    public boolean onOptionItemSelected(MenuItem menuItem)
-    {
-        switch (menuItem.getItemId()) {
-            case android.R.id.home:
-                onBackPressed();
-                finish();
-                return true;
-        }
-        return super.onOptionsItemSelected(menuItem);
+    @Override
+    protected void onResume() {
+        super.onResume();
+        GetData task = new GetData(){
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                for(int i= 0;i<DB.getDataList().size()/3;i++){
+                    reviewlist.add(new Review(DB.getData(i*3).toString(), DB.getData(i*3+2).toString(), Integer.parseInt(DB.getData(i*3+1).toString())));
+                    listView.setAdapter(adapter);
+                }
+            }
+        };
+
+        task.execute("http://"+DB.getIP()+"/getreview.php?ID="+DB.getUser().getID()+"&rest="+selectfood.getRestaurant()+"&cat="+selectfood.getCategory()+
+                "&food="+selectfood.getFoodName());
+
     }
+
+
 
 }

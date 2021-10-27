@@ -47,12 +47,14 @@ public class ResListAdapter extends BaseAdapter  {
         TextView resName = (TextView) convertView.findViewById((R.id.resName));
         TextView resTime = (TextView) convertView.findViewById((R.id.textViewResOpTime));
         TextView resCongestion = (TextView) convertView .findViewById((R.id.textViewResCongestion));
+        TextView resNum = (TextView) convertView.findViewById(R.id.textViewResNum);
 
 
         restaurant reslistItem = resList.get(position);
         resName.setText(reslistItem.getName());
         resTime.setText(reslistItem.getOpTime());
         resCongestion.setText((reslistItem.getCongestion()));
+        resNum.setText(reslistItem.getNum()+"명");
 
         return convertView;
     }

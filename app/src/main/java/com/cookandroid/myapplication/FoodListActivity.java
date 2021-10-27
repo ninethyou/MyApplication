@@ -64,8 +64,6 @@ public class FoodListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Food f = (Food) parent.getAdapter().getItem(position);
-                Log.d("food", f.getFoodName()+f.getFoodPrice()+f.getFoodInfo());
-                Log.w("wish", DB.getData(0).toString());
 
                 Intent intent = new Intent(getApplicationContext(), FoodDetailActivity.class);
                 intent.putExtra("food", (Serializable) f);

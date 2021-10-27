@@ -7,15 +7,18 @@ public class Order {
     String orderPrice;
     String orderCount;
     String orderState;
+    String orderWait;
+    String orderRest;
 
 
-    public Order(String orderNo, String orderFood, String orderTime, String orderPrice, String orderCount, String orderState) {
+    public Order(String orderNo, String orderFood, String orderTime, String orderPrice, String orderCount, String orderState, String orderRest) {
         this.orderNo = orderNo;
         this.orderFood = orderFood;
         this.orderTime = orderTime;
         this.orderPrice = orderPrice;
         this.orderCount = orderCount;
         this.orderState = orderState;
+        this.orderRest = orderRest;
     }
 
     public String getOrderNo() {
@@ -57,4 +60,12 @@ public class Order {
     public String getOrderState() { return orderState; }
 
     public void setOrderState(String orderState) { this.orderState = orderState; }
+
+    public String getOrderWait() { return orderWait; }
+
+    public void setOrderWait(String orderWait) { this.orderWait = orderWait; }
+
+    public String getOrderRest() {return orderRest; }
+
+    public void setOrderRest(String orderRest) { this.orderRest = orderRest; }
 }

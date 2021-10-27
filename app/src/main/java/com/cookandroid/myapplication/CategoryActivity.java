@@ -73,7 +73,6 @@ public class CategoryActivity extends AppCompatActivity {
                         }else{
                             Toast.makeText(getApplicationContext(), "찾을 수 없습니다", Toast.LENGTH_LONG).show();
                         }
-                        Log.d("phptest", "POST resaponse - "+s);
                     }
                 };
                 task.execute("http://"+ DB.getIP()+"/menulist.php?category="+n.getName()+"&rest="+rest);
