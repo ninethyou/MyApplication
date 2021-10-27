@@ -54,6 +54,7 @@ public class OrderListFragment extends Fragment {
                 protected void onPostExecute(String s) {
                     super.onPostExecute(s);
                     if(DB.getData(0).toString().equals("0")){
+                        orderList.clear();
                         Toast.makeText(getContext(), "주문 내역이 없습니다.", Toast.LENGTH_SHORT).show();
                     }else{
                         orderList.clear();
