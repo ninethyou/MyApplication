@@ -31,6 +31,13 @@ public class HomeFragment extends Fragment {
         user = DB.getUser();
         id = (TextView) rootview.findViewById(R.id.userid);
         id.setText(user.getID()+" 님");
+        id.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), MyInfoActivity.class);
+                startActivity(intent);
+            }
+        });
 
         imgbtn = (ImageButton) rootview.findViewById(R.id.imageButtonBasket);
         imgbtn.setOnClickListener(new OnClickListener()

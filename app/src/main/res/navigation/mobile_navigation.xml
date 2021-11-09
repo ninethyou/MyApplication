@@ -12,13 +12,13 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_statistics"
         android:name="com.cookandroid.myapplication.ui.dashboard.DashboardFragment"
         android:label="@string/title_myinfo"
-        tools:layout="@layout/fragment_myinfo" />
+        tools:layout="@layout/fragment_ranking" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_orderlist"
         android:name="com.cookandroid.myapplication.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_orderlist" />

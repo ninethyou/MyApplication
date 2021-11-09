@@ -147,19 +147,19 @@ public class FoodDetailActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        //리뷰 받아오는 부분
         GetData task = new GetData(){
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                 for(int i= 0;i<DB.getDataList().size()/3;i++){
-                    reviewlist.add(new Review(DB.getData(i*3).toString(), DB.getData(i*3+2).toString(), Integer.parseInt(DB.getData(i*3+1).toString())));
+                    reviewlist.add(new Review(DB.getData(i*3).toString(), DB.getData(i*3+1).toString(), Integer.parseInt(DB.getData(i*3+2).toString())));
                     listView.setAdapter(adapter);
                 }
             }
         };
 
-        task.execute("http://"+DB.getIP()+"/getreview.php?ID="+DB.getUser().getID()+"&rest="+selectfood.getRestaurant()+"&cat="+selectfood.getCategory()+
-                "&food="+selectfood.getFoodName());
+        task.execute("http://"+DB.getIP()+"/getreview.php?ID="+DB.getUser().getID()+"&rest="+selectfood.getRestaurant()+"&food="+selectfood.getFoodName());
 
     }
 

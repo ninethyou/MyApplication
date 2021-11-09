@@ -45,6 +45,7 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.0.0'
     implementation 'com.github.bootpay:client_android_java:3.3.91'
     implementation 'com.squareup.okhttp3:okhttp:+'
+    implementation 'androidx.cardview:cardview:1.0.0'
 
 
     testImplementation 'junit:junit:4.+'

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RatingBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,10 +15,10 @@ import androidx.appcompat.app.AppCompatActivity;
 public class ReViewActivity extends AppCompatActivity {
     private TextView reFood;
     private EditText reComment;
-    private SeekBar reScore;
+    private RatingBar reScore;
     private int score;
     private Button reWrite, reCancle;
-    String rest, food;
+    String rest, food, cat;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +26,7 @@ public class ReViewActivity extends AppCompatActivity {
 
         reFood = (TextView) findViewById(R.id.reviewFoodName);
         reComment = (EditText) findViewById(R.id.reviewComment2);
-        reScore = (SeekBar) findViewById(R.id.reviewScoreBar);
+        reScore = (RatingBar) findViewById(R.id.reviewRaitingBar);
         reWrite = (Button) findViewById(R.id.btn_review);
         reCancle = (Button) findViewById(R.id.btn_reviewcancle);
 
@@ -34,7 +35,6 @@ public class ReViewActivity extends AppCompatActivity {
         rest = intent.getExtras().getString("rest");
 
         reFood.setText(food);
-        reScore.setProgress(3);
 
         reWrite.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,7 +42,8 @@ public class ReViewActivity extends AppCompatActivity {
 
 
                 SendData task = new SendData(ReViewActivity.this);
-                String param = "ID="+DB.getUser().getID()+"&food="+food+"&rest="+rest+"&review="+ reComment.getText().toString()+"&score="+Integer.toString(reScore.getProgress());
+                String param = "ID="+DB.getUser().getID()+"&food="+food+"&rest="+rest
+                        +"&review="+reComment.getText().toString()+"&score="+Integer.toString((int)reScore.getRating());
                 task.execute("http://"+DB.getIP()+"/setreview.php", param);
 
                 reComment.setText("");

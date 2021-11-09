@@ -11,7 +11,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
 
     HomeFragment fragment1;
-    MyInfoFragment fragment2;
+    RankingFragment fragment2;
     OrderListFragment fragment3;
 
 
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         fragment1 = new HomeFragment();
-        fragment2 = new MyInfoFragment();
+        fragment2 = new RankingFragment();
         fragment3 = new OrderListFragment();
 
 
@@ -39,13 +39,13 @@ public class MainActivity extends AppCompatActivity {
                                 .replace(R.id.container, fragment1).commit();
 
                         return true;
-                    case R.id.navigation_dashboard:
+                    case R.id.navigation_statistics:
 
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.container, fragment2).commit();
 
                         return true;
-                    case R.id.navigation_notifications:
+                    case R.id.navigation_orderlist:
 
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.container, fragment3).commit();

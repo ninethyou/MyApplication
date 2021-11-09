@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="600dp"
+    tools:context=".RankingFragment"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/ranking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ranking"
+            android:textStyle="bold"
+            android:textSize="50dp"
+            android:layout_marginVertical="8dp"
+            android:layout_gravity="center"/>
+        <TextView
+            android:id="@+id/ranking_best"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Best"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:layout_marginVertical="5dp"
+            android:background="@color/gray_100"
+            android:gravity="center_horizontal"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_marginVertical="8dp"
+            android:paddingRight="10dp"
+            app:layout_constraintTop_toBottomOf="@id/ranking">
+            <include layout="@layout/prefer"
+                android:id="@+id/best_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"/>
+            <include layout="@layout/prefer"
+                android:id="@+id/best_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <include layout="@layout/prefer"
+                android:id="@+id/best_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/ranking_worst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Worst"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:layout_marginVertical="8dp"
+            android:background="@color/gray_100"
+            android:gravity="center_horizontal"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_marginVertical="8dp"
+            app:layout_constraintTop_toBottomOf="@id/ranking">
+            <include layout="@layout/prefer"
+                android:id="@+id/worst_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"/>
+            <include layout="@layout/prefer"
+                android:id="@+id/worst_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <include layout="@layout/prefer"
+                android:id="@+id/worst_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+</ScrollView>

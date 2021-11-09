@@ -9,15 +9,17 @@ public class Order {
     String orderState;
     String orderWait;
     String orderRest;
+    String orderCat;
 
 
-    public Order(String orderNo, String orderFood, String orderTime, String orderPrice, String orderCount, String orderState, String orderRest) {
+    public Order(String orderNo, String orderFood, String orderTime, String orderPrice, String orderCount, String orderState, String orderCat, String orderRest) {
         this.orderNo = orderNo;
         this.orderFood = orderFood;
         this.orderTime = orderTime;
         this.orderPrice = orderPrice;
         this.orderCount = orderCount;
         this.orderState = orderState;
+        this.orderCat = orderCat;
         this.orderRest = orderRest;
     }
 
@@ -65,7 +67,11 @@ public class Order {
 
     public void setOrderWait(String orderWait) { this.orderWait = orderWait; }
 
-    public String getOrderRest() {return orderRest; }
+    public String getOrderRest() { return orderRest; }
 
     public void setOrderRest(String orderRest) { this.orderRest = orderRest; }
+
+    public String getOrderCat() { return orderCat; }
+
+    public void setOrderCat(String orderCat) { this.orderCat = orderCat; }
 }

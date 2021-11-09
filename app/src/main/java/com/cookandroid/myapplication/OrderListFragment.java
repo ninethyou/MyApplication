@@ -25,7 +25,6 @@ public class OrderListFragment extends Fragment {
     private OrderAdapter adapter;
     private ArrayList<Order> orderList;
     private RecyclerView recyclerView;
-    private Button refresh;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -48,6 +47,7 @@ public class OrderListFragment extends Fragment {
     public void onResume() {
         super.onResume();
 
+        //주문내역 받아오는 부분
         try{
             GetData task = new GetData(){
                 @Override
@@ -58,10 +58,11 @@ public class OrderListFragment extends Fragment {
                         Toast.makeText(getContext(), "주문 내역이 없습니다.", Toast.LENGTH_SHORT).show();
                     }else{
                         orderList.clear();
-                        for(int i=0;i< DB.getDataList().size()/7;i++) {
-                            orderList.add(new Order(DB.getData(i * 7).toString(), DB.getData(i * 7 + 1).toString(), DB.getData(i * 7 + 2).toString(),
-                                    DB.getData(i * 7 + 5).toString(), DB.getData(i*7+3).toString(), DB.getData(i*7+4).toString(),
-                                    DB.getData(i*7+6).toString()));
+                        int j = 8;
+                        for(int i=0;i< DB.getDataList().size()/j;i++) {
+                            orderList.add(new Order(DB.getData(i * j).toString(), DB.getData(i * j + 1).toString(), DB.getData(i * j + 2).toString(),
+                                    DB.getData(i * j + 3).toString(), DB.getData(i*j+4).toString(), DB.getData(i*j+5).toString(),
+                                    DB.getData(i*j+6).toString(), DB.getData(i*j+7).toString()));
                         }
 
                         recyclerView.setAdapter(adapter);

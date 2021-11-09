@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -46,13 +47,13 @@ public class ReviewAdapter extends BaseAdapter  {
              convertView = inflater.inflate(R.layout.review, parent, false);
         }
         TextView reID = (TextView) convertView.findViewById((R.id.reviewId));
-        TextView rescore = (TextView) convertView.findViewById((R.id.reviewScore));
+        RatingBar reRate = (RatingBar) convertView.findViewById((R.id.reviewRating));
         TextView review = (TextView) convertView.findViewById((R.id.reviewComment));
 
 
         Review reviewItem = reviewlist.get(position);
         reID.setText(reviewItem.getId());
-        rescore.setText(Integer.toString(reviewItem.getScore()));
+        reRate.setRating(reviewItem.getScore());
         review.setText(reviewItem.getReview());
 
         return convertView;

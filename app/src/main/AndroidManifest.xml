@@ -46,6 +46,7 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".CategoryActivity" />
         <activity android:name=".ReViewActivity" />
+        <activity android:name=".MyInfoActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
